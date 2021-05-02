@@ -1,0 +1,23 @@
+{
+  "name": "TS-WeatherAPI",
+  "version": "1.0.0",
+  "description": "An API for this weather application: https://github.com/drtonton/TS-WeatherApp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drtonton/TS-WeatherAPI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drtonton/TS-WeatherAPI/issues"
+  },
+  "homepage": "https://github.com/drtonton/TS-WeatherAPI#readme",
+  "devDependencies": {
+    "typescript": "^4.2.4"
+  }
+}
