@@ -1,4 +1,4 @@
-import { getWeatherData } from '../services/Weather.service';
+import { getCurrentWeather } from '../services/Weather.service';
 
 interface TestResponse {
   message: string;
@@ -6,7 +6,7 @@ interface TestResponse {
 
 export default class WeatherController { // turn this into a regular fn
   public async getWeatherForLocation(): Promise<TestResponse> {
-    const bro = await getWeatherData('hi im a locatin');
+    const bro = await getCurrentWeather('London');
     return {
       message: 'beep boop!',
     };

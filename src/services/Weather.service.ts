@@ -1,11 +1,15 @@
 const axios = require('axios').default;
 
-// const url: string = `api.openweathermap.org/data/2.5/weather?q=London&appid={API key}`;
+const cityList = require('../../city.list.json');
 
-export async function getWeatherData(location:string) {
+
+
+export async function getCurrentWeather(location:string) {
   try {
-    const response = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=London&appid=${process.env.OPEN_WEATHER_API_KEY}`);
-    console.log('PICLES', response);
+    const filtered = cityList.filter((city: any) => city.name.includes('London'));
+    console.log('woop woop', filtered);
+    const response = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${process.env.OPEN_WEATHER_API_KEY}`);
+    console.log('PICLES', response.data);
   } catch (err) {
     console.log('THERE WAS AN ERROR', err);
   }
