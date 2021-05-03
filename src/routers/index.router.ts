@@ -2,7 +2,9 @@ import express from 'express';
 
 import WeatherRouter from './Weather.router';
 
-const router = express.Router();
+const Router = express.Router();
 
-router.use('/weather',
+Router.use('/weather',
   WeatherRouter);
+
+export default Router;
