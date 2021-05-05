@@ -4,9 +4,14 @@ interface TestResponse {
   message: string;
 }
 
-export default class WeatherController { // turn this into a regular fn
-  public async getWeatherForLocation(cityId: string) {
-    const bro: any = await getCurrentWeather(cityId);
-    return bro;
-  }
+// export default class WeatherController { // turn this into a regular fn
+//   public async getWeatherForLocation(cityId: string) {
+//     const bro: any = await getCurrentWeather(cityId);
+//     return bro;
+//   }
+// }
+
+export async function getWeatherForLocation(cityId: string) {
+  const bro: any = await getCurrentWeather(cityId);
+  return bro;
 }
