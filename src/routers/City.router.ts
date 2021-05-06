@@ -7,7 +7,10 @@ CityRouter.get('/', (req, res) => {
   // http://localhost:8000/city?name=london
   const name: string = req.query.name as string;
   const response = findCities(name);
-  return res.send(response);
+  if (true) {
+    console.log('dogs');
+    res.send(response);
+  }
 });
 
 export default CityRouter;

@@ -3,7 +3,7 @@ import Router from './routers/index.router';
 
 require('dotenv').config();
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8001;
 const app: Application = express();
 
 app.use(express.json());
