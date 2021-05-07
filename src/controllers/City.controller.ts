@@ -2,7 +2,8 @@ import { findCityMatches } from '../services/City.service';
 
 export function findCities(partialName: string) {
   try {
-    return findCityMatches(partialName);
+    const firstTenMatches = findCityMatches(partialName).slice(0, 10);
+    return firstTenMatches;
   } catch (err) {
     console.log('ERROR', err);
   }
