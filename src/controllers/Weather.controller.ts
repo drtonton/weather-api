@@ -12,6 +12,7 @@ interface TestResponse {
 // }
 
 export async function getWeatherForLocation(cityId: string) {
-  const bro: any = await getCurrentWeather(cityId);
-  return bro;
+  const weatherData: any = await getCurrentWeather(cityId);
+  // const formattedWeatherData =
+  return weatherData;
 }
