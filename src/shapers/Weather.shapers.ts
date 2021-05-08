@@ -6,10 +6,14 @@ interface OWData {
 interface ShapedWeatherData {
   generalDescription: string;
   descriptionIconUrl: string;
-  hiTemp: number;
-  loTemp: number;
-  feelsLike: number;
-  currentTemp: number;
+  hiTempFahr: number;
+  loTempFahr: number;
+  feelsLikeFahr: number;
+  currentTempFahr: number;
+  hiTempCels: number;
+  loTempCels: number;
+  feelsLikeCels: number;
+  currentTempCels: number;
 }
 
 interface Main {
@@ -24,17 +28,30 @@ interface Weather {
   icon: string;
 }
 
+function kelvinToCelsius(number: number): number {
+  return Math.floor(number - 273);
+}
+
+function kelvinToFahrenheit(number: number): number {
+  return Math.floor(1.8 * (number - 273) + 32);
+}
+
 export default function shapeWeatherData(weatherData: OWData): ShapedWeatherData {
   const { weather, main }: { weather: Weather[], main: Main } = weatherData;
+  const { temp_max, temp_min, feels_like, temp }: { temp_max: number, temp_min: number, feels_like: number, temp: number } = main;
   const generalData = weather[0];
 
   const formattedData = {
     generalDescription: generalData.description,
     descriptionIconUrl: `http://openweathermap.org/img/w/${generalData.icon}.png`,
-    hiTemp: main.temp_max,
-    loTemp: main.temp_min,
-    feelsLike: main.feels_like,
-    currentTemp: main.temp
+    hiTempFahr: kelvinToFahrenheit(temp_max),
+    hiTempCels: kelvinToCelsius(temp_max),
+    loTempFahr: kelvinToFahrenheit(temp_min),
+    loTempCels: kelvinToCelsius(temp_min),
+    feelsLikeFahr: kelvinToFahrenheit(feels_like),
+    feelsLikeCels: kelvinToCelsius(feels_like),
+    currentTempFahr: kelvinToFahrenheit(temp),
+    currentTempCels: kelvinToCelsius(temp)
   };
 
   return formattedData;
