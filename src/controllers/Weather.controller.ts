@@ -1,4 +1,5 @@
 import { getCurrentWeather } from '../services/Weather.service';
+import shapeWeatherData from '../shapers/Weather.shapers';
 
 interface TestResponse {
   message: string;
@@ -12,7 +13,7 @@ interface TestResponse {
 // }
 
 export async function getWeatherForLocation(cityId: string) {
-  const weatherData: any = await getCurrentWeather(cityId);
-  // const formattedWeatherData =
-  return weatherData;
+  const weatherData = await getCurrentWeather(cityId);
+  const formattedWeatherData = shapeWeatherData(weatherData);
+  return formattedWeatherData;
 }
