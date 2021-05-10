@@ -12,6 +12,7 @@ API keys are meant to be private, but OpenWeather's is free and easy to obtain a
 ... and you're good to go.
 
 `npm run dev` <- to run the API
+
 `npm test` <- to execute all tests
 
 # Notes/Todos
