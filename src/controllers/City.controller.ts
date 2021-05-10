@@ -5,6 +5,6 @@ export function findCities(partialName: string) {
     const firstTenMatches = findCityMatches(partialName).slice(0, 10);
     return firstTenMatches;
   } catch (err) {
-    console.log('ERROR', err);
+    throw(err);
   }
 }

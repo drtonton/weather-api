@@ -12,10 +12,10 @@ export default function shapeWeatherData(weatherData: OWData): ShapedWeatherData
   const { weather, main }: { weather: Weather[], main: Main } = weatherData;
   const { temp_max, temp_min, feels_like, temp }: { temp_max: number, temp_min: number, feels_like: number, temp: number } = main;
   const generalData = weather[0];
-
+  const descriptionIconUrl = `http://openweathermap.org/img/w/${generalData.icon}.png`;
   const formattedData = {
     generalDescription: generalData.description,
-    descriptionIconUrl: `http://openweathermap.org/img/w/${generalData.icon}.png`,
+    descriptionIconUrl,
     hiTempFahr: kelvinToFahrenheit(temp_max),
     hiTempCels: kelvinToCelsius(temp_max),
     loTempFahr: kelvinToFahrenheit(temp_min),

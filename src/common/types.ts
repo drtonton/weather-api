@@ -35,15 +35,6 @@ export interface City {
   state: string;
   country: string;
 }
-
-// export interface OpenWeatherReport {
-//   weather: Weather;
-//   main: Main;
-//   wind: Wind;
-//   clouds: Clouds;
-//   sys: Sys;
-// }
-
 export interface OWData {
   main: Main;
   weather: Weather[];
