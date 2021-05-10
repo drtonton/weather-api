@@ -1,5 +1,5 @@
 # What is this?
-An API for this weather application: https://github.com/drtonton/TS-WeatherApp
+An API for this weather application: https://github.com/drtonton/weather-app
 Handles city-searching and fetching weather data from OpenWeather's API.
 
 # Installation, Running locally, and Tests
