@@ -1,32 +1,4 @@
-interface OWData {
-  main: Main;
-  weather: Weather[];
-}
-
-interface ShapedWeatherData {
-  generalDescription: string;
-  descriptionIconUrl: string;
-  hiTempFahr: number;
-  loTempFahr: number;
-  feelsLikeFahr: number;
-  currentTempFahr: number;
-  hiTempCels: number;
-  loTempCels: number;
-  feelsLikeCels: number;
-  currentTempCels: number;
-}
-
-interface Main {
-  temp: number;
-  feels_like: number;
-  temp_min: number;
-  temp_max: number;
-}
-
-interface Weather {
-  description: string;
-  icon: string;
-}
+import { OWData, Weather, Main, ShapedWeatherData } from '../common/types';
 
 function kelvinToCelsius(number: number): number {
   return Math.floor(number - 273);
