@@ -29,6 +29,13 @@ export interface Sys {
   sunset: number;
 }
 
+export interface City {
+  id: number;
+  name: string;
+  state: string;
+  country: string;
+}
+
 // export interface OpenWeatherReport {
 //   weather: Weather;
 //   main: Main;

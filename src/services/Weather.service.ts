@@ -8,6 +8,6 @@ export async function getCurrentWeather(location:string): Promise<OWData> {
     const weatherReport: OWData = response.data;
     return weatherReport;
   } catch (err) {
-    throw(err); // todo: create some standarized errors
+    throw(err);
   }
 }
