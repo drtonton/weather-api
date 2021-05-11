@@ -18,3 +18,4 @@ API keys are meant to be private, but OpenWeather's is free and easy to obtain a
 # Notes/Todos
 * would make sense to host the `city.list.json` remotely, rather than storing such a large file in the project itself
 * a standardized successes and errors system would be good to implement, and would support richer testing efforts
+* logging of inbound requests from front end and outbound requests to external services. Would help with debugging.
